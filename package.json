@@ -1,0 +1,11 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "docker-compose up -d --build",
+    "stop": "docker-compose down",
+    "logs:backend": "docker-compose logs -f backend",
+    "db:reset": "docker-compose down -v && docker-compose up -d db && sleep 5 && docker-compose run --rm backend npx prisma migrate dev --name reset"
+  }
+}
